@@ -1,0 +1,110 @@
+### User sign up endpoint
+
+POST http://localhost:5000/v1/user
+Content-Type: application/json
+
+{
+    "name":"manali",
+    "company":"Company name",
+    "address":"xyz Banglore",
+    "phone":"1245697354",
+    "email":"xyz@gmail.com",
+    "password":"manalisonae12"
+}
+### User sign up endpoint
+
+POST http://localhost:5000/v1/user/login
+Content-Type: application/json
+
+{
+    "email":"xyz@gmail.com",
+    "password":"manalisonae12"
+}
+
+### Get a user profile endpoint
+
+GET  http://localhost:5000/v1/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoieHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NzYzOTE3NCwiZXhwIjoxNjY3NjQwMDc0fQ.P1UN0ez-v35e6z46jUkSm5fXQkIKkz1DVVvCOcyCC94
+
+
+### Token routers
+
+### Get refreshed token
+
+GET  http://localhost:5000/v1/tokens
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoieHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NzYzOTE3NCwiZXhwIjoxNjcwMjMxMTc0fQ.e3JYn4cqghcbXAKjYCLbzlzEI0FETByM7Jlc8nvNko4
+
+
+### Password Reset endpoints
+
+POST http://localhost:5000/v1/user/reset-password
+Content-Type: application/json
+
+{
+ "email":"xyz@gmail.com"   
+}
+
+
+### Update new password endpoint
+
+PATCH http://localhost:5000/v1/user/reset-password
+Content-Type: application/json
+
+{
+ "email":"xyz@gmail.com",
+ "pin":624565,
+ "newPassword":"password1"
+}
+
+
+
+### User logout endpoint
+
+DELETE http://localhost:5000/v1/user/reset-password
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoieHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NzYzOTE3NCwiZXhwIjoxNjY3NjQwMDc0fQ.P1UN0ez-v35e6z46jUkSm5fXQkIKkz1DVVvCOcyCC94
+
+ 
+###Ticket apis
+
+ 
+### Open new ticket
+POST http://localhost:5000/v1/ticket
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoieHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NzYzOTE3NCwiZXhwIjoxNjY3NjQwMDc0fQ.P1UN0ez-v35e6z46jUkSm5fXQkIKkz1DVVvCOcyCC94
+Content-Type: application/json
+
+
+{
+ "subject": "Nodejs Issue",
+  "sender": "Manali",
+  "message": "i have problem in JWT. Please resolve my query asap." 
+}
+
+###Get all the tickets
+GET http://localhost:5000/v1/ticket
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoieHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NzYzOTE3NCwiZXhwIjoxNjY3NjQwMDc0fQ.P1UN0ez-v35e6z46jUkSm5fXQkIKkz1DVVvCOcyCC94
+
+### Get single ticket
+GET http://localhost:5000/v1/ticket/...
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoieHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NzYzOTE3NCwiZXhwIjoxNjY3NjQwMDc0fQ.P1UN0ez-v35e6z46jUkSm5fXQkIKkz1DVVvCOcyCC94
+
+
+### Reply message to the ticket
+PUT http://localhost:5000/v1/ticket/...
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoieHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NzYzOTE3NCwiZXhwIjoxNjY3NjQwMDc0fQ.P1UN0ez-v35e6z46jUkSm5fXQkIKkz1DVVvCOcyCC94
+Content-Type: application/json
+
+
+{
+   "message": "This is the 2nd follow up." ,
+   "sender": "Manali"
+}
+
+
+### Close the ticket
+PATCH http://localhost:5000/v1/ticket/close-ticket/...
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoieHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NzYzOTE3NCwiZXhwIjoxNjY3NjQwMDc0fQ.P1UN0ez-v35e6z46jUkSm5fXQkIKkz1DVVvCOcyCC94
+
+
+### Delete the ticket
+DELETE  http://localhost:5000/v1/ticket/...
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoieHl6QGdtYWlsLmNvbSIsImlhdCI6MTY2NzYzOTE3NCwiZXhwIjoxNjY3NjQwMDc0fQ.P1UN0ez-v35e6z46jUkSm5fXQkIKkz1DVVvCOcyCC94
